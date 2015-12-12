@@ -32,6 +32,7 @@
     "babel-plugin-transform-runtime": "6.x.x"
   },
   "dependencies": {
-    "babel-runtime": "6.x.x"
+    "babel-runtime": "6.x.x",
+    "uuid": "2.x.x"
   }
 }
