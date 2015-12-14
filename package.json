@@ -1,20 +1,21 @@
 {
-  "name": "npm-base",
+  "name": "lokka",
   "version": "1.0.0",
-  "description": "A base NPM package for writing a NPM package in ES2015",
+  "description": "Simple JavaScript client for GraphQL",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kadirahq/npm-base.git"
+    "url": "https://github.com/kadirahq/lokka.git"
   },
+  "keywords": ["graphql", "client", "javascript"],
   "license": "MIT",
   "options": {
     "mocha": "--require scripts/mocha_runner lib/**/__tests__/**/*.js"
   },
   "scripts": {
     "prepublish": ". ./scripts/prepublish.sh",
-    "lint": "./node_modules/.bin/eslint ./lib",
-    "lintfix": "./node_modules/.bin/eslint ./lib --fix",
-    "testonly": "./node_modules/.bin/mocha $npm_package_options_mocha",
+    "lint": "eslint ./lib",
+    "lintfix": "eslint ./lib --fix",
+    "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly"
   },
   "devDependencies": {
