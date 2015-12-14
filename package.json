@@ -18,6 +18,9 @@
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly"
   },
+  "directories": {
+    "lib": ""
+  },
   "devDependencies": {
     "mocha": "2.x.x",
     "chai": "3.x.x",
