@@ -19,7 +19,6 @@
     "test": "npm run lint && npm run testonly"
   },
   "devDependencies": {
-    "nodemon": "1.7.x",
     "mocha": "2.x.x",
     "chai": "3.x.x",
     "eslint": "1.7.x",
