@@ -1,12 +1,16 @@
 {
   "name": "lokka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple JavaScript client for GraphQL",
   "repository": {
     "type": "git",
     "url": "https://github.com/kadirahq/lokka.git"
   },
-  "keywords": ["graphql", "client", "javascript"],
+  "keywords": [
+    "graphql",
+    "client",
+    "javascript"
+  ],
   "license": "MIT",
   "options": {
     "mocha": "--require scripts/mocha_runner lib/**/__tests__/**/*.js"
