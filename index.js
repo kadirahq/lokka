@@ -61,7 +61,7 @@ var Lokka = (function () {
       }
 
       // XXX: Validate query against the schema
-      var name = _uuid2.default.v4();
+      var name = 'f' + _uuid2.default.v4().replace(/-/g, '');
       var fragmentWithName = fragment.replace('fragment', 'fragment ' + name);
       this._fragments[name] = fragmentWithName;
 
@@ -74,7 +74,7 @@ var Lokka = (function () {
 
       var fragmentsMap = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
-      var matched = queryOrFragment.match(/\.\.\.[A-Za-z0-9\-]+/g);
+      var matched = queryOrFragment.match(/\.\.\.[A-Za-z0-9]+/g);
       if (matched) {
         var fragmentNames = matched.map(function (name) {
           return name.replace('...', '');
