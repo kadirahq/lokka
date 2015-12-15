@@ -56,12 +56,11 @@ Let's define a fragment for the `Film` type.
 
 ```js
 const filmInfo = client.createFragment(`
-    fragment on Film {
-      title,
-      director,
-      producers,
-      releaseDate
-    }
+  fragment on Film {
+    title,
+    director,
+    releaseDate
+  }
 `);
 ```
 
@@ -71,15 +70,15 @@ Let's query all the films using the above fragment:
 
 ```js
 client.query(`
-    {
-      allFilms {
-        films {
-          ...${filmInfo}
-        }
+  {
+    allFilms {
+      films {
+        ...${filmInfo}
       }
     }
+  }
 `).then(result => {
-    console.log(result.allFilms);
+  console.log(result.allFilms.films);
 });
 ```
 
