@@ -18,14 +18,16 @@ We can initialize a Lokka client like this:
 
 ```js
 import Lokka from 'lokka';
+// const Lokka = require('lokka').Lokka;
 import HttpTransport from 'lokka-transport-http';
+// const HttpTransport = require('lokka-transport-http').HttpTransport;
 
 const client = new Lokka({
     transport: new HttpTransport('http://graphql-swapi.parseapp.com/')
 });
 ```
 
-> Here we connect lokka to Facebook's [SWAPI GraphQL Demo](http://graphql-swapi.parseapp.com/). 
+> Here we connect lokka to Facebook's [SWAPI GraphQL Demo](http://graphql-swapi.parseapp.com/).
 
 ### Basic Querying
 
@@ -105,7 +107,7 @@ client.mutate(`
 ```
 
 > Normally, when we are sending a GraphQL mutation we write it like below:
-> 
+>
 > ```
 > mutation someNameForRequest {
 >   newFilm: createMovie(...) {
@@ -113,7 +115,7 @@ client.mutate(`
 >   }
 > }
 > ```
-> 
+>
 > But with lokka, you don't need to write `mutation someNameForRequest` part. Lokka will add it for you.
 
 ## Demo App
@@ -122,7 +124,7 @@ We've just look at features of lokka. Let's have look at demo where you can play
 
 ## Future Development
 
-In this version of lokka, it's just a basic API where you can query against a GraphQL Schema. This API is stable. 
+In this version of lokka, it's just a basic API where you can query against a GraphQL Schema. This API is stable.
 
 We'll have more features in the future versions of lokka.
 

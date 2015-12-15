@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Lokka = undefined;
 
 var _keys = require('babel-runtime/core-js/object/keys');
 
@@ -15,10 +16,6 @@ var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 var _createClass2 = require('babel-runtime/helpers/createClass');
 
 var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _transport = require('./transport');
-
-var _transport2 = _interopRequireDefault(_transport);
 
 var _uuid = require('uuid');
 
@@ -33,12 +30,21 @@ var Lokka = (function () {
 
     this._transport = options.transport;
     this._fragments = {};
-    if (!(this._transport instanceof _transport2.default)) {
-      throw new Error('transport should be an instance of LokkaTransport');
-    }
+    this._validateTransport(this._transport);
   }
 
   (0, _createClass3.default)(Lokka, [{
+    key: '_validateTransport',
+    value: function _validateTransport(transport) {
+      if (!transport) {
+        throw new Error('transport is required!');
+      }
+
+      if (typeof transport.send !== 'function') {
+        throw new Error('transport should have a .send() method!');
+      }
+    }
+  }, {
     key: 'send',
     value: function send(rawQuery) {
       if (!rawQuery) {
@@ -121,4 +127,5 @@ var Lokka = (function () {
   return Lokka;
 })();
 
+exports.Lokka = Lokka;
 exports.default = Lokka;
