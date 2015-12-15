@@ -1,5 +1,8 @@
 # Change Log
 
+### v1.2.1
+* Fix issue of having fragment name having invalid chars
+
 ### v1.2.0
 
 * Ability to require normally. Like this: `require('lokka').Lokka`
