@@ -17,13 +17,11 @@ npm i --save lokka lokka-transport-http
 We can initialize a Lokka client like this:
 
 ```js
-import Lokka from 'lokka';
-// const Lokka = require('lokka').Lokka;
-import HttpTransport from 'lokka-transport-http';
-// const HttpTransport = require('lokka-transport-http').Transport;
+const Lokka = require('lokka').Lokka;
+const Transport = require('lokka-transport-http').Transport;
 
 const client = new Lokka({
-    transport: new HttpTransport('http://graphql-swapi.parseapp.com/')
+  transport: new Transport('http://graphql-swapi.parseapp.com/')
 });
 ```
 
