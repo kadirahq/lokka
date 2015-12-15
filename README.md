@@ -20,7 +20,7 @@ We can initialize a Lokka client like this:
 import Lokka from 'lokka';
 // const Lokka = require('lokka').Lokka;
 import HttpTransport from 'lokka-transport-http';
-// const HttpTransport = require('lokka-transport-http').HttpTransport;
+// const HttpTransport = require('lokka-transport-http').Transport;
 
 const client = new Lokka({
     transport: new HttpTransport('http://graphql-swapi.parseapp.com/')
