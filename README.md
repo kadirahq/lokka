@@ -17,13 +17,11 @@ npm i --save lokka lokka-transport-http
 We can initialize a Lokka client like this:
 
 ```js
-import Lokka from 'lokka';
-// const Lokka = require('lokka').Lokka;
-import HttpTransport from 'lokka-transport-http';
-// const HttpTransport = require('lokka-transport-http').HttpTransport;
+const Lokka = require('lokka').Lokka;
+const Transport = require('lokka-transport-http').Transport;
 
 const client = new Lokka({
-    transport: new HttpTransport('http://graphql-swapi.parseapp.com/')
+  transport: new Transport('http://graphql-swapi.parseapp.com/')
 });
 ```
 
@@ -56,12 +54,11 @@ Let's define a fragment for the `Film` type.
 
 ```js
 const filmInfo = client.createFragment(`
-    fragment on Film {
-      title,
-      director,
-      producers,
-      releaseDate
-    }
+  fragment on Film {
+    title,
+    director,
+    releaseDate
+  }
 `);
 ```
 
@@ -71,15 +68,15 @@ Let's query all the films using the above fragment:
 
 ```js
 client.query(`
-    {
-      allFilms {
-        films {
-          ...${filmInfo}
-        }
+  {
+    allFilms {
+      films {
+        ...${filmInfo}
       }
     }
+  }
 `).then(result => {
-    console.log(result.allFilms);
+  console.log(result.allFilms.films);
 });
 ```
 
