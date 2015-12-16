@@ -1,6 +1,8 @@
 # lokka
 
-Simple JavaScript client for GraphQL.
+Simple JavaScript client for GraphQL. 
+
+Works on all the JavaScript environments including **Browser**, **NodeJS** and **React Native**.
 
 ## Installation
 
@@ -115,9 +117,12 @@ client.mutate(`
 >
 > But with lokka, you don't need to write `mutation someNameForRequest` part. Lokka will add it for you.
 
-## Demo App
+## Demo Apps
 
-We've just look at features of lokka. Let's have look at demo where you can play with. Check this repo: <https://github.com/kadira-samples/simple-lokka-demo>
+Have a look at some sample apps:
+
+* [Client Side App](https://github.com/kadira-samples/react-graphql-todos)
+* [React Native App](https://github.com/kadira-samples/react-native-graphql-demo)
 
 ## Future Development
 
