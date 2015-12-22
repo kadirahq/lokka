@@ -131,6 +131,7 @@ In this version of lokka, it's just a basic API where you can query against a Gr
 We'll have more features in the future versions of lokka.
 
 * 1.x.x [Latest] - Query/Mutate against a GraphQL schema.
+  * support for query variables
 * 2.x.x - Client side query validations.
 * 3.x.x - Client side smart cache.
 * 4.x.x - Subscriptions Support.
