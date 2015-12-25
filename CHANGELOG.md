@@ -1,5 +1,8 @@
 # Change Log
 
+### v1.3.1
+* Update README
+
 ### v1.3.0
 * Add ReactNative support. See: [1e0755e](https://github.com/kadirahq/lokka/tree/1e0755e8aa733ddf865313ca8d7c444fe6159303)
 
