@@ -117,6 +117,23 @@ client.mutate(`
 >
 > But with lokka, you don't need to write `mutation someNameForRequest` part. Lokka will add it for you.
 
+### Query Variables
+
+We can use [query variables](https://learngraphql.com/basics/query-variables) when querying the schema.
+
+```js
+const query = `
+  query sumNow($a: Int, $b: Int) {
+    sum(a: $a, b: $b)
+  }
+`;
+
+const vars = {a: 10, b: 30};
+client.query(query, vars).then(result => {
+  console.log(result.sum);
+});
+```
+
 ## Demo Apps
 
 Have a look at some sample apps:

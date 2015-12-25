@@ -1,5 +1,8 @@
 # Change Log
 
+### v1.4.0
+* Add query variables support to .query().
+
 ### v1.3.1
 * Update README
 
