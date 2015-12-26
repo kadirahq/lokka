@@ -46,12 +46,12 @@ var Lokka = (function () {
     }
   }, {
     key: 'send',
-    value: function send(rawQuery) {
+    value: function send(rawQuery, vars) {
       if (!rawQuery) {
         throw new Error('rawQuery is required!');
       }
 
-      return this._transport.send(rawQuery);
+      return this._transport.send(rawQuery, vars);
     }
   }, {
     key: 'createFragment',
@@ -98,7 +98,7 @@ var Lokka = (function () {
     }
   }, {
     key: 'query',
-    value: function query(_query) {
+    value: function query(_query, vars) {
       if (!_query) {
         throw new Error('query is required!');
       }
@@ -107,7 +107,7 @@ var Lokka = (function () {
       var fragments = this._findFragments(_query);
       var queryWithFragments = _query + '\n' + fragments.join('\n');
 
-      return this.send(queryWithFragments);
+      return this.send(queryWithFragments, vars);
     }
   }, {
     key: 'mutate',
