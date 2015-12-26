@@ -1,5 +1,8 @@
 # Change Log
 
+### v1.5.0
+* Add query watching functionality and a built in cache.
+
 ### v1.4.0
 * Add query variables support to .query().
 
