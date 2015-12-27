@@ -21,6 +21,10 @@ var _uuid = require('uuid');
 
 var _uuid2 = _interopRequireDefault(_uuid);
 
+var _cache = require('./cache');
+
+var _cache2 = _interopRequireDefault(_cache);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Lokka = (function () {
@@ -31,6 +35,8 @@ var Lokka = (function () {
     this._transport = options.transport;
     this._fragments = {};
     this._validateTransport(this._transport);
+    this.cache = new _cache2.default();
+    this._fetchingQueries = {};
   }
 
   (0, _createClass3.default)(Lokka, [{
@@ -122,6 +128,51 @@ var Lokka = (function () {
       var queryWithFragments = mutationQuery + '\n' + fragments.join('\n');
 
       return this.send(queryWithFragments);
+    }
+  }, {
+    key: 'watchQuery',
+    value: function watchQuery(query, _vars, _callback) {
+      var callback = _callback;
+      var vars = _vars;
+
+      if (!query) {
+        throw new Error('query is required');
+      }
+
+      if (!callback) {
+        callback = vars;
+        vars = {};
+      }
+
+      if (typeof callback !== 'function') {
+        throw new Error('You need to provide a callback to watch');
+      }
+
+      var hasItemAlready = Boolean(this.cache.getItem(query, vars));
+      if (!hasItemAlready) {
+        this._fetchToCache(query, vars);
+      }
+      return this.cache.watchItem(query, vars, callback);
+    }
+  }, {
+    key: 'refetchQuery',
+    value: function refetchQuery(query, vars) {
+      if (!query) {
+        throw new Error('query is required');
+      }
+
+      this._fetchToCache(query, vars);
+    }
+  }, {
+    key: '_fetchToCache',
+    value: function _fetchToCache(query, vars) {
+      var _this2 = this;
+
+      this.query(query, vars).then(function (payload) {
+        _this2.cache.setItemPayload(query, vars, payload);
+      }).catch(function (error) {
+        _this2.cache.fireError(query, vars, error);
+      });
     }
   }]);
   return Lokka;
