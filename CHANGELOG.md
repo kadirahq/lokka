@@ -1,5 +1,8 @@
 # Change Log
 
+### v1.6.0
+* Add cache expiration logic and cache all the items for one minute by default.
+
 ### v1.5.0
 * Add query watching functionality and a built in cache.
 
