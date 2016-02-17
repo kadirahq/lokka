@@ -1,6 +1,6 @@
 # lokka
 
-Simple JavaScript client for GraphQL. 
+Simple GraphQL client for JavaScript. 
 
 Works on all the JavaScript environments including **Browser**, **NodeJS** and **React Native**.
 
