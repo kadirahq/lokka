@@ -27,7 +27,7 @@ var _cache2 = _interopRequireDefault(_cache);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Lokka = (function () {
+var Lokka = function () {
   function Lokka() {
     var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
     (0, _classCallCheck3.default)(this, Lokka);
@@ -117,7 +117,7 @@ var Lokka = (function () {
     }
   }, {
     key: 'mutate',
-    value: function mutate(query) {
+    value: function mutate(query, vars) {
       if (!query) {
         throw new Error('query is required!');
       }
@@ -127,7 +127,7 @@ var Lokka = (function () {
       var fragments = this._findFragments(mutationQuery);
       var queryWithFragments = mutationQuery + '\n' + fragments.join('\n');
 
-      return this.send(queryWithFragments);
+      return this.send(queryWithFragments, vars);
     }
   }, {
     key: 'watchQuery',
@@ -176,7 +176,7 @@ var Lokka = (function () {
     }
   }]);
   return Lokka;
-})();
+}();
 
 exports.Lokka = Lokka;
 exports.default = Lokka;

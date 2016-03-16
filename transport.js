@@ -14,7 +14,7 @@ var _createClass3 = _interopRequireDefault(_createClass2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var LokkaTransport = (function () {
+var LokkaTransport = function () {
   function LokkaTransport() {
     (0, _classCallCheck3.default)(this, LokkaTransport);
   }
@@ -31,6 +31,6 @@ var LokkaTransport = (function () {
 
   }]);
   return LokkaTransport;
-})();
+}();
 
 exports.default = LokkaTransport;

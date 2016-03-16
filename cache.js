@@ -19,7 +19,7 @@ var _createClass3 = _interopRequireDefault(_createClass2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Cache = exports.Cache = (function () {
+var Cache = exports.Cache = function () {
   function Cache() {
     var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
     (0, _classCallCheck3.default)(this, Cache);
@@ -132,6 +132,6 @@ var Cache = exports.Cache = (function () {
     }
   }]);
   return Cache;
-})();
+}();
 
 exports.default = Cache;
