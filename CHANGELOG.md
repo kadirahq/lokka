@@ -1,5 +1,8 @@
 # Change Log
 
+### v1.7.0
+* Allow to accept variables in mutations. See [PR13](https://github.com/kadirahq/lokka/pull/13)
+
 ### v1.6.0
 * Add cache expiration logic and cache all the items for one minute by default.
 
