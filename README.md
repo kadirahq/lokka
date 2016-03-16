@@ -10,6 +10,7 @@ Works on all the JavaScript environments including **Browser**, **NodeJS** and *
 * [Usage](#usage)
 * [Core API](#core-api)
 * [Cache API](#cache-api)
+* [Available Transports](#available-transports)
 * [Demo Apps](#demo-apps)
 * [Future Development](#future-development)
 
@@ -225,6 +226,12 @@ Fire an error for all the registered watchHandlers.
 ```js
 client.cache.removeItem(query, vars, new Error('some error'));
 ```
+
+## Available Transports
+
+* [HTTP Transport](https://github.com/kadirahq/lokka-transport-http)
+* [Basic Auth HTTP Transport](https://github.com/kadirahq/lokka-transport-http-auth)
+* [JWT Auth HTTP Transport](https://github.com/kadirahq/lokka-transport-jwt-auth)
 
 ## Demo Apps
 
