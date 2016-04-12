@@ -101,7 +101,7 @@ client.query(`
 GraphQL Swapi API, does not have mutations. If we had mutations we could invoke them like this:
 
 ```js
-client.mutate(`
+client.mutate(`{
     newFilm: createMovie(
         title: "Star Wars: The Force Awakens",
         director: "J.J. Abrams",
@@ -112,7 +112,7 @@ client.mutate(`
     ) {
         ...${filmInfo}
     }
-`).then(response => {
+}`).then(response => {
     console.log(response.newFilm);
 });
 ```
