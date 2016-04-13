@@ -188,7 +188,7 @@ setTimeout(stop, 1000 * 60);
 Refetch a given query and update the cache:
 
 ```js
-client.watchQuery(query, {message: 'Hello Again'});
+client.refetchQuery(query, {message: 'Hello Again'});
 ```
 
 This will notify all the watch handlers registered with `BlogSchema.watchQuery`.
@@ -224,7 +224,7 @@ client.cache.removeItem(query, vars);
 Fire an error for all the registered watchHandlers.
 
 ```js
-client.cache.removeItem(query, vars, new Error('some error'));
+client.cache.fireError(query, vars, new Error('some error'));
 ```
 
 ## Available Transports
