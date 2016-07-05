@@ -117,10 +117,27 @@ client.mutate(`{
 });
 ```
 
+To send mutations with variable, invoke them like this:
+```js
+const mutationQuery = `($input: SomeVarType!){
+    newData: createData($input) {
+        ...${someInfo}
+    }
+}`;
+
+const vars = {
+  input: 'some data here',
+};
+
+client.mutate(mutationQuery, vars).then(resp => {
+    console.log(resp.newFilm);
+});
+```
+
 > Normally, when we are sending a GraphQL mutation we write it like below:
 >
 > ```
-> mutation someNameForRequest {
+> mutation someNameForRequest ($vars: SomeVarType) {
 >   newFilm: createMovie(...) {
 >     ...
 >   }
