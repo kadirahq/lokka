@@ -247,6 +247,7 @@ client.cache.fireError(query, vars, new Error('some error'));
 ## Available Transports
 
 * [HTTP Transport](https://github.com/kadirahq/lokka-transport-http)
+* [HTTP Transport Query String](https://github.com/occamzrazor/lokka-transport-http-querystring)
 * [Basic Auth HTTP Transport](https://github.com/kadirahq/lokka-transport-http-auth)
 * [JWT Auth HTTP Transport](https://github.com/kadirahq/lokka-transport-jwt-auth)
 
