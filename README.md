@@ -249,6 +249,7 @@ client.cache.fireError(query, vars, new Error('some error'));
 * [HTTP Transport](https://github.com/kadirahq/lokka-transport-http)
 * [Basic Auth HTTP Transport](https://github.com/kadirahq/lokka-transport-http-auth)
 * [JWT Auth HTTP Transport](https://github.com/kadirahq/lokka-transport-jwt-auth)
+* [Local GraphQLSchema Transport](https://github.com/truebill/lokka-transport-graphql-js)
 
 ## Demo Apps
 
