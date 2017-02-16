@@ -163,6 +163,17 @@ client.query(query, vars).then(result => {
 });
 ```
 
+### Querying With OperationName
+
+Querying with an operationName will send the query string under an operationName param. This is useful for pre-defined queries on the server.
+
+```js
+client.queryWithOperationName(
+  'AllFilms',
+  { after: 'cursor' }
+)
+```
+
 ## Cache API
 
 Lokka has a built in cache. But it won't be used when you are invoking the core API. For that, you need to use following APIs:

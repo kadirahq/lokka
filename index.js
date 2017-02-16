@@ -116,6 +116,15 @@ var Lokka = function () {
       return this.send(queryWithFragments, vars);
     }
   }, {
+    key: 'queryWithOperationName',
+    value: function queryWithOperationName(operationName, vars) {
+      if (!operationName) {
+        throw new Error('operationName is required!');
+      }
+
+      return this._transport.send(null, vars, operationName);
+    }
+  }, {
     key: 'mutate',
     value: function mutate(query, vars) {
       if (!query) {
