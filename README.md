@@ -130,7 +130,7 @@ const vars = {
 };
 
 client.mutate(mutationQuery, vars).then(resp => {
-    console.log(resp.newFilm);
+    console.log(resp.newData);
 });
 ```
 
