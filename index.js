@@ -76,31 +76,8 @@ var Lokka = function () {
   }, {
     key: '_findFragments',
     value: function _findFragments(queryOrFragment) {
-      var _this = this;
-
-      var fragmentsMap = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-      var matched = queryOrFragment.match(/\.\.\.[A-Za-z0-9]+/g);
-      if (matched) {
-        var fragmentNames = matched.map(function (name) {
-          return name.replace('...', '');
-        });
-        fragmentNames.forEach(function (name) {
-          var fragment = _this._fragments[name];
-          if (!fragment) {
-            throw new Error('There is no such fragment: ' + name);
-          }
-
-          fragmentsMap[name] = fragment;
-          _this._findFragments(fragment, fragmentsMap);
-        });
-      }
-
-      var fragmentsArray = (0, _keys2.default)(fragmentsMap).map(function (key) {
-        return fragmentsMap[key];
-      });
-
-      return fragmentsArray;
+      //deactivate fragments. Return No fragment.
+      return [];
     }
   }, {
     key: 'query',
