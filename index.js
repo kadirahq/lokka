@@ -25,6 +25,8 @@ var _cache = require('./cache');
 
 var _cache2 = _interopRequireDefault(_cache);
 
+var use_fragments=true;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Lokka = function () {
@@ -76,8 +78,34 @@ var Lokka = function () {
   }, {
     key: '_findFragments',
     value: function _findFragments(queryOrFragment) {
-      //deactivate fragments. Return No fragment.
-      return [];
+        if(use_fragments)
+        {
+            var fragmentsMap = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+            var matched = queryOrFragment.match(/\.\.\.[A-Za-z0-9]+/g);
+            if (matched) {
+                var fragmentNames = matched.map(function (name) {
+                    return name.replace('...', '');
+                });
+                fragmentNames.forEach(function (name) {
+                    var fragment = _this._fragments[name];
+                    if (!fragment) {
+                        throw new Error('There is no such fragment: ' + name);
+                    }
+
+                    fragmentsMap[name] = fragment;
+                    _this._findFragments(fragment, fragmentsMap);
+                });
+            }
+
+            var fragmentsArray = (0, _keys2.default)(fragmentsMap).map(function (key) {
+                return fragmentsMap[key];
+            });
+            return fragmentsArray;
+        }
+        else{
+            return [];
+        }
     }
   }, {
     key: 'query',
@@ -85,6 +113,9 @@ var Lokka = function () {
       if (!_query) {
         throw new Error('query is required!');
       }
+
+        if(vars && vars.no_fragments)
+            use_fragments=false;
 
       // XXX: Validate query against the schema
       var fragments = this._findFragments(_query);

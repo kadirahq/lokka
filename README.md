@@ -96,6 +96,7 @@ client.query(`
 
 > We can also use fragments inside fragments as well. Lokka will resolve fragments in nested fashion.
 
+> To deactivate fragments, simply add ```no_fragments:true``` to the vars options
 ### Mutations
 
 GraphQL Swapi API, does not have mutations. If we had mutations we could invoke them like this:
