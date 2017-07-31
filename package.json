@@ -1,6 +1,6 @@
 {
   "name": "lokka",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Simple JavaScript client for GraphQL",
   "types": "types.d.ts",
   "repository": {
